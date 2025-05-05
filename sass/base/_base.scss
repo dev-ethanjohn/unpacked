@@ -35,7 +35,8 @@ html::before {
   width: 100%;
   background-image: url("/assets/background-image.jpg");
   background-size: cover;
-  background-position: top center;
+  background-position: center;
+  scale: 1;
   z-index: -1;
   background-repeat: no-repeat;
 }

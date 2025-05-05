@@ -1,8 +1,14 @@
 :root {
   // // *NOTE: COLORS
 
-  // --clr-white: 0 100% 100%;
-  // --clr-black: 0 0% 0%;
+  --clr-white: 0 100% 100%;
+  --clr-black: 0 0% 0%;
+
+  --clr-white-800: 0 0% 84%; /* #d5d5d5*/
+
+  --clr-dark-800: 224 10% 6%; /* #161619 */
+  --clr-dark-600: 0 0% 20%; /* #333333 */
+
   // // grey
   // --clr-grey-600: 180 25% 32%;
   // --clr-grey-550: 180 18% 40%;
@@ -21,9 +27,11 @@
 
   // --clr-orange-400: 13, 70% 60%;
 
-  // //* NOTE: FONT FAMILY
-  // /* font-family */
-  // --ff-mono-normal: "Space Mono", monospace;
+  //* NOTE: FONT FAMILY
+  --ff-sans-adlam-display: "ADLaM Display", sans-serif;
+  --ff-sans-archivo-black: "Archivo Black", sans-serif;
+  --ff-sans-be-vietnam-pro: "Be Vietnam Pro", sans-serif;
+  --ff-sans-gaegu: "Gaegu", sans-serif;
 
   //* NOTE: FONT SIZE
   --fs-900: 2.5rem; /* 40px */
