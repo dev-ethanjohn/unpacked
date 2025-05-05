@@ -1,0 +1,46 @@
+@use "../abstracts//variables";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+
+    // IMAGE
+    &-image-wrapper {
+      height: 6.75rem;
+      width: 6.75rem;
+    }
+
+    &-image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 100%;
+    }
+
+    // INFO
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: end;
+    }
+
+    &-role {
+      font-size: var(--fs-600);
+      font-weight: bold;
+    }
+  }
+}
+
+.container {
+  padding: 1.5rem;
+  height: 100vh;
+  overflow-y: auto;
+}

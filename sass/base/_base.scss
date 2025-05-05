@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Fade out effect at the top */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0) 6%,
+    rgba(0, 0, 0, 0.3) 7%,
+    black 8%,
+    black 100%
+  );
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/assets/background-image.png");
+  background-size: cover;
+  background-position: top center;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+img {
+  /* https://www.youtube.com/watch?v=345V2MU3E_w */
+  font-style: italic;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  display: inline;
+  all: unset;
+  cursor: pointer;
+}
