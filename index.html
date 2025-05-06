@@ -20,6 +20,9 @@
 </head>
 
 <body>
+  <div id="js-overlay" class="overlay">
+    <div id="js-overlay-target" class="overlay__inner"></div>
+  </div>
 
   <main class="container">
 
@@ -142,7 +145,9 @@
           <div class="about__info">
 
             <div class="about__me">
-              <img class="about__me-pic" src="./assets/about/about-me.jpg" alt="Coding with my little cousin">
+              <div class="about__me-container">
+                <img class="about__me-pic" src="./assets/about/about-me.jpg" alt="Coding with my little cousin">
+              </div>
 
               <p class="about__me-title">About Me 🙌🏼</p>
 
@@ -160,11 +165,120 @@
 
             <div class="about__favorites">
               <div class="about__favorites-wrapper">
+
                 <span class="about__favorites-title"> Favorites ✦ ✧ ✰</span>
                 <p class="about__favorites-description">-&nbsp; Ghibli, Jollibee, <mark>SpaceHey</mark> ☁︎, Reddit,
                   jaysean, Silent
                   voice, Kang Kong chips + adobo</p>
-                <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="">
+                <!-- <div class="image-container about__favorites-ghibli">
+                  <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="">
+                </div> -->
+                <div class="ghibli-container">
+                  <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="about">
+      <div class="about__card">
+        <div class="about__card-header">
+          <img class="about__card-folder" src="./assets/about/folder.png" alt="">
+          <span class="about__card-title">unpacked</span>
+        </div>
+
+        <div class="about__content">
+
+          <div class="about__nav">
+            <ul class="about__nav-icons" aria-hidden="true">
+              <li>
+                <img class="about__nav-icon" src="./assets/about/globe.png" alt="" role="presentation" />
+              </li>
+              <li><span class="about__nav-separator">|</span></li>
+              <li>
+                <img class="about__nav-icon" src="./assets/about/tolink.png" alt="" role="presentation" />
+              </li>
+              <li><span class="about__nav-separator">|</span></li>
+              <li>
+                <img class="about__nav-icon" src="./assets/about/search.png" alt="" role="presentation" />
+              </li>
+              <li><span class="about__nav-separator">|</span></li>
+              <li>
+                <img class="about__nav-icon" src="./assets/about/wifi.png" alt="" role="presentation" />
+              </li>
+            </ul>
+
+            <ul class="about__nav-socials">
+              <li class="about__nav-social">
+                <a href="https://instagram.com/yourhandle" class="social__link" target="_blank"
+                  rel="noopener noreferrer">
+                  ig
+                </a>
+              </li>
+              <li class="about__nav-social">
+                <a href="https://facebook.com/yourhandle" class="social__link" target="_blank"
+                  rel="noopener noreferrer">
+                  facebook
+                </a>
+              </li>
+              <li class="about__nav-social">
+                <a href="https://twitter.com/yourhandle" class="social__link" target="_blank" rel="noopener noreferrer">
+                  twt
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about__content-header">
+            <span class="about__content-label">Documents:</span>
+            <div class="about__content-directory">
+              <span class="about_content-path">
+                :) Users/ethanjohnpaguntalan
+              </span>
+              <span>＜ ＞</span>
+            </div>
+          </div>
+
+          <div class="about__info">
+
+            <div class="about__me">
+              <div class="about__me-container">
+                <img class="about__me-pic" src="./assets/about/about-me.jpg" alt="Coding with my little cousin">
+              </div>
+
+              <p class="about__me-title">About Me 🙌🏼</p>
+
+
+              <ul class="about__me-attributes">
+                <li>🇵🇭&nbsp;&nbsp;Fil :)</li>
+                <li>🧑‍🦱&nbsp;&nbsp;24 </li>
+                <li>🖥️&nbsp;&nbsp;#CODE</li>
+                <li>🖼️&nbsp;&nbsp;draw ✦ art</li>
+                <li>🔥&nbsp;&nbsp;pop ꫂ songs</li>
+              </ul>
+              <hr>
+              <img class="about__me-end-break" src="./assets/about/end-break.png" alt="" height="10rem">
+            </div>
+
+            <div class="about__favorites">
+              <div class="about__favorites-wrapper">
+
+                <span class="about__favorites-title"> Favorites ✦ ✧ ✰</span>
+                <p class="about__favorites-description">-&nbsp; Ghibli, Jollibee, <mark>SpaceHey</mark> ☁︎, Reddit,
+                  jaysean, Silent
+                  voice, Kang Kong chips + adobo</p>
+                <!-- <div class="image-container about__favorites-ghibli">
+                      <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="">
+                    </div> -->
+
+                <div class="ghibli-container">
+                  <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="">
+                </div>
               </div>
 
             </div>
@@ -177,7 +291,7 @@
 
   </footer>
 
-
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

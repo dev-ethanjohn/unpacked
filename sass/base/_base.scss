@@ -14,16 +14,16 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   /* Fade out effect at the top */
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0px,
-    rgba(0, 0, 0, 0) 30px,
-    rgba(0, 0, 0, 0.1) 36px,
-    rgba(0, 0, 0, 0.3) 42px,
-    rgba(0, 0, 0, 0.6) 50px,
-    black 60px,
-    black 100%
-  );
+  // mask-image: linear-gradient(
+  //   to bottom,
+  //   transparent 0px,
+  //   rgba(0, 0, 0, 0) 30px,
+  //   rgba(0, 0, 0, 0.1) 36px,
+  //   rgba(0, 0, 0, 0.3) 42px,
+  //   rgba(0, 0, 0, 0.6) 50px,
+  //   black 60px,
+  //   black 100%
+  // );
 }
 
 html::before {
