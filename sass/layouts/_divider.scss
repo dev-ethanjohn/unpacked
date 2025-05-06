@@ -2,4 +2,9 @@
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+
+  &__icon {
+    color: hsl(var(--clr-white-800));
+    width: 1.25rem;
+  }
 }

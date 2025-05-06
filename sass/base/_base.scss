@@ -39,6 +39,7 @@ html::before {
   scale: 1;
   z-index: -1;
   background-repeat: no-repeat;
+  // filter: brightness(75%);
 }
 
 img {
@@ -64,4 +65,11 @@ button {
   display: inline;
   all: unset;
   cursor: pointer;
+}
+
+mark {
+  background-color: hsl(var(--clr-blue-100));
+  padding: 0 0.25em;
+  border-radius: 0.25rem;
+  color: inherit;
 }
