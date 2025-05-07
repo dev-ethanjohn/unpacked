@@ -143,7 +143,7 @@
       object-fit: cover;
       width: 100%;
       min-height: 0;
-      border: 1.5px solid hsl(var(--clr-grey-500) / 0.9);
+      border: 1.5px solid hsl(var(--clr-grey-500) / 0.8);
       box-shadow: 0 2px 4px 0 hsl(var(--clr-dark-800) / 0.4);
       object-position: top;
     }
@@ -231,7 +231,7 @@
       min-height: 0;
       border: 1.5px solid hsl(var(--clr-grey-500) / 0.9);
       box-shadow: 0 2px 4px 0 hsl(var(--clr-dark-800) / 0.4);
-      object-position: top;
+      object-position: center;
       border-radius: 0.5rem;
     }
   }

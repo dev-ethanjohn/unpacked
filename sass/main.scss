@@ -1,3 +1,4 @@
+@use "abstracts/animation";
 @use "base/base";
 @use "base/typography";
 
@@ -5,48 +6,12 @@
 
 @use "layouts/page";
 @use "layouts/divider";
+@use "layouts/overlay";
 
 @use "pages/hero";
 @use "pages/about";
 
-.overlay {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: hsl(0, 0%, 0%, 0.8);
-  width: 100%;
-  height: 100vh;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.overlay__inner {
-  padding: 2rem 1rem;
-  max-width: 80vw;
-  margin: 0 auto;
-}
-
-.overlay:not(.overlay--active) {
-  display: none;
-}
-
-// /* TRACK THIS IMAGE IMAGE */
-.gallery__image--active {
-  view-transition-name: active-image;
-}
-
-@supports (view-transition-name: none) {
-  ::view-transition-image-pair(root) {
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-  }
-
-  ::view-transition-group(active-image) {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-duration: 200ms;
-  }
-}
+@use "utilities/utilities";
 
 .container {
   min-height: 100vh;

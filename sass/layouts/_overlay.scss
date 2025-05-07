@@ -1,0 +1,15 @@
+.overlay__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  padding: 0.5rem;
+
+  transition: transform 0.2s ease;
+}
