@@ -20,10 +20,10 @@
 </head>
 
 <body>
-  <div id="js-overlay" class="overlay">
-    <button class="overlay__close" aria-label="Close overlay">&times;</button>
+  <aside id="js-overlay" class="overlay">
+    <!-- <button class="overlay__close" aria-label="Close overlay">&times;</button> -->
     <div id="js-overlay-target" class="overlay__inner"></div>
-  </div>
+  </aside>
 
   <main class="container">
 
@@ -146,15 +146,13 @@
           <div class="about__info">
 
             <div class="about__me">
-              <div class="about__me-container">
-                <!-- <img class="about__me-pic" src="./assets/about/about-me.jpg" alt="Coding with my little cousin"> -->
-                <img class="about__me-pic" src="./assets/about/about-me.jpg" alt="Coding with my little cousin">
-                <div class="image-description hidden">
-                  <p><mark class="highlight-light-orange">Coding, eh? Just pretending we knew what we were doing.
-                      Lol</mark>
-                  </p>
-                </div>
-              </div>
+              <figure onclick="toggleImageView(this.querySelector('img'))" class="about__me-container">
+
+                <img id="js-gallery-image" class="about__me-pic" src="./assets/about/about-me.jpg" />
+
+                <figcaption class="image-description hidden" hidden><mark class="highlight-light-blue">Coding eh?
+                  </mark></figcaption>
+              </figure>
               <p class="about__me-title">About Me 🙌🏼</p>
 
               <ul class="about__me-attributes">
@@ -177,28 +175,105 @@
                   jaysean, Silent
                   voice, Kang Kong chips + adobo</p>
 
-                <div class="ghibli-container">
-                  <img class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" alt="" data-title="Studio Ghibli"
-                    data-description="A collection of iconic films from the legendary animation studio.">
-                  <div class="image-description hidden">
+                <figure onclick="toggleImageView(this.querySelector('img'))" class="ghibli-container">
 
-                    <p><mark class="highlight-light-blue">Like Jiro Horikoshi, just a lil guy chasing big dreams
+                  <img id="js-gallery-image" class="about__favorites-ghibli" src="./assets/about/ghibli.jpg" />
+
+                  <figcaption class="image-description hidden" hidden>
+                    <p><mark class="highlight-light-orange">Like Jiro
+                        Horikoshi, just a lil guy chasing big dreams
                         💫</mark></p>
-
-                  </div>
-                </div>
+                  </figcaption>
+                </figure>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 
+    TODO:
+    1. Test UI for all container 
+    2. Mock data
+   -->
+
+    <!-- NOTE: PROJECTS -->
+    <section class="projects">
+      <div class="projects__header">
+        <h2 class="projects__header-title">Projects <span class="projects__header-count">(0)</span></h2>
+        <button class="projects__view-all-btn">View all</button>
+      </div>
+
+      <div class="projects__scroll">
+        <div class="projects__list">
+          <article class="project-card">
+            <img src="/assets/background-image.jpg" alt="" class="project-card__thumbnail">
+            <h3 class="project-card__title">Time tracker app</h3>
+            <div class="project-card__buttons">
+              <a href="#" class="project-card__btn">live</a>
+              <a href="#" class="project-card__btn">repo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="/assets/background-image.jpg" alt="" class="project-card__thumbnail">
+            <h3 class="project-card__title">Time tracker app</h3>
+            <div class="project-card__buttons">
+              <a href="#" class="project-card__btn btn-left">live</a>
+              <a href="#" class="project-card__btn btn-right">repo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="/assets/background-image.jpg" alt="" class="project-card__thumbnail">
+            <h3 class="project-card__title">Time tracker app</h3>
+            <div class="project-card__buttons">
+              <a href="#" class="project-card__btn btn-left">live</a>
+              <a href="#" class="project-card__btn btn-right">repo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="/assets/background-image.jpg" alt="" class="project-card__thumbnail">
+            <h3 class="project-card__title">Time tracker app</h3>
+            <div class="project-card__buttons">
+              <a href="#" class="project-card__btn btn-left">live</a>
+              <a href="#" class="project-card__btn btn-right">repo</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Project detail modal -->
+      <div class="modal modal--detail hidden">
+        <div class="modal__content">
+          <button class="modal__close">×</button>
+          <h2 class="modal__title">Project Title</h2>
+          <p class="modal__description">Details here...</p>
+        </div>
+      </div>
+
+      <!-- All projects modal -->
+      <div class="modal modal--grid hidden">
+        <div class="modal__content modal__content--grid">
+          <button class="modal__close">×</button>
+          <div class="projects-grid">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- NOTE: TOOls and SKILLS -->
+
   </main>
   <footer>
 
   </footer>
-  <script type="module" src="./js/main.js"></script>
+
+  <script src="/js/index.js"></script>
 </body>
 
 </html>

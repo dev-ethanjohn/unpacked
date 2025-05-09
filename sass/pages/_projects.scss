@@ -1,0 +1,60 @@
+.projects {
+  max-width: 28.75rem;
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark-800));
+  border-radius: 1rem;
+  padding: 0.75rem 0 0.75rem 0.75rem;
+  display: grid;
+  gap: 0.75rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      font-size: var(--fs-600);
+    }
+
+    &-count {
+      font-size: var(--fs-300);
+      font-weight: 500;
+    }
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform;
+  }
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+    min-width: max-content;
+    padding-right: 1rem;
+  }
+}
+
+// NOTE: CARD
+.project-card {
+  display: grid;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 140px;
+
+  &__thumbnail {
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__btn {
+    text-decoration: none;
+    padding: 0.25rem 0.75rem;
+    color: hsl(var(--clr-dark-800));
+    font-size: var(--fs-300);
+  }
+}
