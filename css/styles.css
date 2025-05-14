@@ -154,7 +154,7 @@ body {
   --clr-grey-100: 0 1% 92%; /* #ECEBEB */
   --clr-orange-200: 24 100% 88%; /*#FFDBC3*/
   --clr-orange-100: 19 100% 96%; /*#FFF2EC*/
-  --clr-green-200: 144 59% 75%; /*99E5B7*/
+  --clr-green-200: 144 59% 75%; /* #99E5B7*/
   --clr-blue-700: 225 54% 27%; /* #1F3168 */
   --clr-blue-200: 229 100% 85%; /* #B2C0FF */
   --clr-blue-100: 215 100% 90%; /*#B2D2FF*/
@@ -436,6 +436,7 @@ body {
   padding: 0.75rem 0 0.75rem 0.75rem;
   display: grid;
   gap: 0.75rem;
+  max-height: 24rem;
 }
 .projects__header {
   display: flex;
@@ -453,22 +454,26 @@ body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   will-change: transform;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 .projects__list {
   display: flex;
   gap: 1rem;
   min-width: max-content;
   padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .project-card {
   display: grid;
   flex-direction: column;
   gap: 0.5rem;
-  width: 140px;
+  width: 180px;
 }
 .project-card__thumbnail {
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .project-card__buttons {
   display: flex;
@@ -480,13 +485,24 @@ body {
   font-size: var(--fs-300);
 }
 
+.tools {
+  display: flex;
+  background-color: var(--clr-white);
+  height: 200px;
+  width: 100%;
+  border: 1px solid orange;
+  color: var(--clr-black);
+}
+.tools-tool {
+  color: black;
+}
+
 .overlay {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(78, 78, 78, 0.4);
-  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-color: rgba(78, 78, 78, 0.3);
   background-repeat: repeat;
   background-size: auto;
   width: 100%;
@@ -494,13 +510,39 @@ body {
   z-index: 2;
   cursor: pointer;
   overflow: hidden;
+}
+
+.overlay--about {
+  background-color: rgba(78, 78, 78, 0.3);
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-repeat: repeat;
+  background-size: auto;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-.overlay__inner {
-  max-width: 50vw;
+.overlay--project {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay--project .project-card__thumbnail {
+  max-height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
   margin: 0 auto;
+}
+
+.overlay__inner-about {
+  width: 50%;
+}
+
+.overlay__inner-project {
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: white;
+  width: 80vw;
+  border-radius: 1rem;
 }
 
 .overlay:not(.overlay--active) {
@@ -512,13 +554,21 @@ body {
 }
 
 @supports (view-transition-name: none) {
-  ::view-transition-image-pair(root) {
+  .overlay--about ::view-transition-image-pair(root) {
     animation-duration: 300ms;
     animation-timing-function: ease-in-out;
   }
-  ::view-transition-group(active-image) {
+  .overlay--about ::view-transition-group(active-image) {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-duration: 200ms;
+  }
+  .overlay--project ::view-transition-image-pair(root) {
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .overlay--project ::view-transition-group(active-image) {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-duration: 300ms;
   }
 }
 .image-description.hidden {
@@ -544,7 +594,7 @@ body {
 
 .image-description.animate-in {
   animation: fadeSlideIn 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 300ms;
+  animation-delay: 200ms;
 }
 
 .marker-pink {

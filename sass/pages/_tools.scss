@@ -1,0 +1,12 @@
+.tools {
+  display: flex;
+  background-color: var(--clr-white);
+  height: 200px;
+  width: 100%;
+  border: 1px solid orange;
+  color: var(--clr-black);
+
+  &-tool {
+    color: black;
+  }
+}

@@ -1,6 +1,5 @@
 :root {
-  // // *NOTE: COLORS
-
+  // NOTE: COLORS
   --clr-white: 0 100% 100%;
   --clr-black: 0 0% 0%;
 
@@ -17,30 +16,12 @@
   --clr-orange-200: 24 100% 88%; /*#FFDBC3*/
   --clr-orange-100: 19 100% 96%; /*#FFF2EC*/
 
-  --clr-green-200: 144 59% 75%; /*99E5B7*/
+  --clr-green-200: 144 59% 75%; /* #99E5B7*/
 
   --clr-blue-700: 225 54% 27%; /* #1F3168 */
 
   --clr-blue-200: 229 100% 85%; /* #B2C0FF */
   --clr-blue-100: 215 100% 90%; /*#B2D2FF*/
-
-  // // grey
-  // --clr-grey-600: 180 25% 32%;
-  // --clr-grey-550: 180 18% 40%;
-  // --clr-grey-500: 184 14% 43%;
-  // --clr-grey-400: 184 14% 56%;
-  // --clr-grey-300: 184 19% 68%;
-  // --clr-grey-200: 185 41% 84%;
-  // --clr-grey-50: 189 47% 97%;
-
-  // // green
-  // --clr-green-900: 183 100% 15%;
-  // --clr-green-800: 183 85% 21%;
-  // --clr-green-750: 183 79% 24%;
-  // --clr-green-400: 172 67% 45%;
-  // --clr-green-200: 173 61% 77%;
-
-  // --clr-orange-400: 13, 70% 60%;
 
   //* NOTE: FONT FAMILY
   --ff-sans-adlam-display: "ADLaM Display", sans-serif;
@@ -58,3 +39,5 @@
   --fs-200: 0.8125rem; /* 13px */
   --fs-100: 0.6875rem; /* 11px */
 }
+
+// NOTE: Add a responsive text here from mobile to desktop esp for fonts

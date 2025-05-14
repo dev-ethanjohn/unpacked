@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Project",
+    "description": "Personal portfolio using responsive layout and accessibility best practices",
+    "image": "./assets/about/about-me.jpg",
+    "caption": "Coding eh?",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "#",
+      "repo": "#"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Pomokko",
+    "description": "Full-stack e-commerce platform with React and Node.js",
+    "image": "/assets/projects/pomodoro.jpg",
+    "caption": "Shopping experience",
+    "tags": ["React", "HTML", "CSS"],
+    "links": {
+      "live": "#",
+      "repo": "#"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Campuwestuhan website redesign",
+    "description": "Full-stack e-commerce platform with React and Node.js",
+    "image": "/assets/projects/pomodoro.jpg",
+    "caption": "Shopping experience",
+    "tags": ["React", "HTML", "CSS"],
+    "links": {
+      "live": "#",
+      "repo": "#"
+    }
+  }
+]
