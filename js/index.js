@@ -1,5 +1,15 @@
 const overlayWrapper = document.getElementById("js-overlay");
 const overlayContent = document.getElementById("js-overlay-target");
+const toolsGrid = document.querySelector(".tools__grid");
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadProjects().catch((error) => {
+    console.error("Failed to load projects:", error);
+    document.querySelector(".projects__header-count").textContent = "(0)";
+  });
+  renderToolsGrid();
+  window.toggleImageView = toggleImageView;
+});
 
 // https://www.smashingmagazine.com/2023/12/view-transitions-api-ui-animations-part1/
 function toggleImageView(clickedImage, sectionType) {
@@ -76,7 +86,7 @@ function moveImageBackFromModal(imageParentElement) {
   overlayWrapper.classList.remove(`overlay--${sectionType}`);
 }
 
-//
+// NOTE: PROJECTS
 async function loadProjects() {
   try {
     const response = await fetch("/js/data/projects.json");
@@ -137,10 +147,88 @@ function renderProjects(projects) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadProjects().catch((error) => {
-    console.error("Failed to load projects:", error);
-    document.querySelector(".projects__header-count").textContent = "(0)";
+//NOTE: TOOLS AND SKILLS
+
+// const skills = {
+//   "Web Fundamentals": ["html.svg", "css.svg", "javascript.svg"],
+//   "Frontend Frameworks": ["reactjs.svg", "nextjs.svg", "vite.svg"],
+//   "CSS & Styling": [
+//     "sass.svg",
+//     "tailwind.svg",
+//     "styled-components.svg",
+//     "bootstrap.svg",
+//   ],
+//   "Development Tools": ["git.svg", "github.svg", "npm.svg", "vscode.svg"],
+//   "Design & Testing": ["figma.svg", "jest.svg"],
+// };
+
+// function renderSkills() {
+//   toolsGrid.innerHTML = "";
+
+//   Object.entries(skills).forEach(([category, tools]) => {
+//     tools.forEach((tool) => {
+//       console.log(tool);
+//       const toolItem = document.createElement("figure");
+//       toolItem.className = "tools__grid-item";
+//       toolItem.innerHTML = `
+//         <img src="./assets/tools/${tool}" alt="${tool.replace(".svg", "")}" />
+//         <figcaption>${tool
+//           .replace(".svg", "")
+//           .replace("styledcompo", "styled-components")}</figcaption>
+//       `;
+//     });
+
+//     toolsGrid.appendChild(toolItem);
+//   });
+// }
+
+const toolsGridTemplate = {
+  template: `
+    "js     js     js     html   html   vite"
+    "js     js     js     html   html    git"
+    "js     js     js     css    css    jest"
+    "sass  sass    boot   css    css   styled"
+    "sass  sass  tail    next react  react"
+    "github npm  vscode figma  react react"
+  `,
+  items: [
+    { name: "javascript.svg", area: "js" },
+    { name: "bootstrap.svg", area: "boot" },
+    { name: "styled-components.svg", area: "styled" },
+    { name: "css.svg", area: "css" },
+    { name: "html.svg", area: "html" },
+    { name: "reactjs.svg", area: "react" },
+    { name: "nextjs.svg", area: "next" },
+    { name: "vite.svg", area: "vite" },
+    { name: "sass.svg", area: "sass" },
+    { name: "tailwind.svg", area: "tail" },
+    { name: "git.svg", area: "git" },
+    { name: "github.svg", area: "github" },
+    { name: "npm.svg", area: "npm" },
+    { name: "vscode.svg", area: "vscode" },
+    { name: "figma.svg", area: "figma" },
+    { name: "jest.svg", area: "jest" },
+  ],
+};
+
+function renderToolsGrid() {
+  const grid = document.querySelector(".tools__grid");
+  grid.style.gridTemplateAreas = toolsGridTemplate.template;
+  grid.innerHTML = "";
+
+  toolsGridTemplate.items.forEach(({ name, area }) => {
+    const item = document.createElement("figure");
+    item.className = "tools__grid-item";
+    item.style.gridArea = area;
+    item.dataset.area = area;
+
+    // Format label
+    let label = name.replace(".svg", "");
+    if (label === "reactjs") label = "react";
+    if (label === "nextjs") label = "next.js";
+
+    item.innerHTML = `
+      <img src="./assets/tools/${name}" alt="${label}" />`;
+    grid.appendChild(item);
   });
-  window.toggleImageView = toggleImageView;
-});
+}
