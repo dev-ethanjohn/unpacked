@@ -148,3 +148,7 @@
 .hidden {
   display: none;
 }
+
+.section-container {
+  box-shadow: 0 5px 5px 0 hsl(var(--clr-dark-800) / 0.5);
+}

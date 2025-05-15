@@ -2,7 +2,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   padding: 1rem;
   color: hsl(var(--clr-dark-800));
   gap: 1rem;
@@ -83,7 +83,7 @@
       &:active {
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem hsl(var(--clr-dark-800) / 0.2);
-        z-index: 2; // Ensure hovered item appears above others
+        z-index: 2;
 
         .tooltip {
           opacity: 1;
@@ -118,7 +118,7 @@
     }
 
     &-caption {
-      font-size: var(--fs-700);
+      font-size: var(--fs-500);
     }
   }
 

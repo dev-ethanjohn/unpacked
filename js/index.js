@@ -149,39 +149,6 @@ function renderProjects(projects) {
 
 //NOTE: TOOLS AND SKILLS
 
-// const skills = {
-//   "Web Fundamentals": ["html.svg", "css.svg", "javascript.svg"],
-//   "Frontend Frameworks": ["reactjs.svg", "nextjs.svg", "vite.svg"],
-//   "CSS & Styling": [
-//     "sass.svg",
-//     "tailwind.svg",
-//     "styled-components.svg",
-//     "bootstrap.svg",
-//   ],
-//   "Development Tools": ["git.svg", "github.svg", "npm.svg", "vscode.svg"],
-//   "Design & Testing": ["figma.svg", "jest.svg"],
-// };
-
-// function renderSkills() {
-//   toolsGrid.innerHTML = "";
-
-//   Object.entries(skills).forEach(([category, tools]) => {
-//     tools.forEach((tool) => {
-//       console.log(tool);
-//       const toolItem = document.createElement("figure");
-//       toolItem.className = "tools__grid-item";
-//       toolItem.innerHTML = `
-//         <img src="./assets/tools/${tool}" alt="${tool.replace(".svg", "")}" />
-//         <figcaption>${tool
-//           .replace(".svg", "")
-//           .replace("styledcompo", "styled-components")}</figcaption>
-//       `;
-//     });
-
-//     toolsGrid.appendChild(toolItem);
-//   });
-// }
-
 const toolsGridTemplate = {
   template: `
     "js     js     js     html   html   vite"

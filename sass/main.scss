@@ -12,6 +12,7 @@
 @use "pages/about";
 @use "pages/projects";
 @use "pages/tools";
+@use "pages/blogs";
 
 @use "utilities/utilities";
 
@@ -28,4 +29,6 @@
     black 60px,
     black 100%
   );
+  padding: 1.5rem;
+  gap: 1.5rem;
 }

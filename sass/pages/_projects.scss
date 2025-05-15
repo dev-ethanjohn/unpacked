@@ -2,7 +2,7 @@
   max-width: 28.75rem;
   background-color: hsl(var(--clr-white));
   color: hsl(var(--clr-dark-800));
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: 0.75rem 0 0.75rem 0.75rem;
   display: grid;
   gap: 0.75rem;
@@ -48,9 +48,15 @@
 
   &__thumbnail {
     width: 100%;
-    //  height:
-    object-fit: cover;
+    height: 100%; // or set a specific height if needed
+    // object-fit: cover;
     object-position: center;
+    transition: transform 0.4s ease, object-position 0.4s ease;
+
+    &:hover {
+      object-position: center center; // adjust if needed
+      object-fit: cover;
+    }
   }
 
   &__buttons {
