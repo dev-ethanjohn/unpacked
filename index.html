@@ -267,7 +267,7 @@
 
     <section class="blogs section-container">
       <div class="blogs__header">
-        <h2 class="tools__header-title">Tools</h2>
+        <h2 class="tools__header-title">Blogs <span class="projects__header-count">(0)</span> </h2>
         <p class="tools__header-caption">I write whenever I need to ✍🏼</p>
       </div>
 
@@ -302,10 +302,48 @@
           <img class="blog__thumbnail" src="./assets/blogs/blog-2.png" alt="">
 
         </article>
+      </div>
+    </section>
 
-
+    <section class="arts section-container">
+      <div class="arts__header">
+        <h2 class="arts__header-title">Art & Stuff</h2>
+        <p class="arts__header-caption">Some of my popular drawings ✎</p>
       </div>
 
+
+      <div class="art__content">
+
+
+        <div class="art__photos" id="arts__photos-pop">
+          <div class="slider">
+            <img class="photo slide slide--1" src="./assets/arts/art-1.jpg"
+              alt="Photograph of Ryan Registe on Brooklyn Bridge" />
+            <img class="photo slide slide--2" src="./assets/arts/art-2.jpeg"
+              alt="Photograph of Ryan Registe holding Parker the Dachshund" loading="lazy" />
+            <img class="photo slide slide--3" src="./assets/arts/art-3.jpg"
+              alt="Photograph of Ryan Registe smiling whilst walking in London" loading="lazy" />
+            <img class="photo slide slide--4" src="./assets/arts/art-4.jpg"
+              alt="Photograph of Ryan Registe focused while standing in a London park" loading="lazy" />
+            <img class="photo slide slide--5" src="./assets/arts/art-5.webp"
+              alt="Photo of Ryan Registe smiling through the pain whilst running the Edinburgh Marathon"
+              loading="lazy" />
+
+            <button class="slider-btn slider-btn--left">
+              <ion-icon class="button-icon button-icon--left" name="chevron-back-outline"></ion-icon>
+            </button>
+            <button class="slider-btn slider-btn--right">
+              <ion-icon class="button-icon button-icon--right" name="chevron-forward-outline"></ion-icon>
+            </button>
+            <div class="dots"></div>
+          </div>
+
+        </div>
+
+        <div class="art__captions">
+          <!-- NOTE: CDYNAMIC CAPTION -->
+        </div>
+      </div>
     </section>
 
 
@@ -314,6 +352,11 @@
 
   </footer>
 
+  <!-- ICONS -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- LOGIC -->
   <script src="/js/index.js"></script>
 
 </body>

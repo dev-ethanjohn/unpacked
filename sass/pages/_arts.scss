@@ -1,0 +1,32 @@
+.arts {
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark-800) / 0.9);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+
+  &__header-title {
+    font-size: var(--fs-600);
+  }
+
+  &__header-caption {
+    color: hsl(var(--clr-dark-800) / 0.75);
+  }
+}
+
+//NOTE: INDIVIDUAL
+.art {
+  &__captions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__caption {
+    &-hashtags {
+      font-size: var(--fs-200);
+    }
+  }
+}

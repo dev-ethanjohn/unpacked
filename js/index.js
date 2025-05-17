@@ -199,3 +199,130 @@ function renderToolsGrid() {
     grid.appendChild(item);
   });
 }
+
+//               //
+//NOTES: PHOTO SWIPPER //
+//               //
+
+const slideData = [
+  {
+    caption: "At the beach 🏖️",
+    hashtags: "#travel #newyork #photography",
+    profilePic: "/assets/profile-image.jpg",
+    username: "@dev.ejohn",
+  },
+  {
+    caption: "Dora X Swiper 👉❤️👈 Joining the bandwagon",
+    hashtags: "#dog #puppy #cute",
+    profilePic: "/assets/profile-image.jpg",
+    username: "@dev.ejohn",
+  },
+  {
+    caption: "Smiling whilst walking in London",
+    hashtags: "#london #travel #smile",
+    profilePic: "/assets/profile-image.jpg",
+    username: "@dev.ejohn",
+  },
+  {
+    caption: "Focused while standing in a London park",
+    hashtags: "#nature #focus #london",
+    profilePic: "/assets/profile-image.jpg",
+    username: "@dev.ejohn",
+  },
+  {
+    caption: "Any look alike?",
+    hashtags: "#originalcharacter",
+    profilePic: "/assets/profile-image.jpg",
+    username: "@dev.ejohn",
+  },
+];
+
+const slides = document.querySelectorAll(`.slide`);
+const buttonLeft = document.querySelector(`.slider-btn--left`);
+const buttonRight = document.querySelector(`.slider-btn--right`);
+const dotContainer = document.querySelector(`.dots`);
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+const createDots = function () {
+  slides.forEach(function (slide, index) {
+    dotContainer.insertAdjacentHTML(
+      `beforeend`,
+      `<button  class="dots--dot" data-slide="${index}" aria-label="photo-${
+        index + 1
+      }"></button>`
+    );
+  });
+};
+
+const activeDot = function (slide) {
+  document
+    .querySelectorAll(`.dots--dot`)
+    .forEach((dot) => dot.classList.remove(`dots--dot--active`));
+  document
+    .querySelector(`.dots--dot[data-slide="${slide}"]`)
+    .classList.add(`dots--dot--active`);
+};
+
+const updateCaption = function (slideNumber) {
+  const captionContainer = document.querySelector(".art__captions");
+  const data = slideData[slideNumber];
+
+  captionContainer.innerHTML = `
+          <p class="art__caption-main">
+            <img class="art__caption-pic" src="${data.profilePic}" alt="Profile picture">
+            <span class="art__caption-username">${data.username}</span>
+             ${data.caption}
+          </p>
+          <p class="art__caption-hashtags">${data.hashtags}</p>
+  `;
+};
+
+const goToSlide = function (slideNumber) {
+  slides.forEach(
+    (slide, index) =>
+      (slide.style.transform = `translateX(${100 * (index - slideNumber)}%)`)
+  );
+};
+
+const nextSlide = function () {
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  goToSlide(currentSlide);
+  activeDot(currentSlide);
+  updateCaption(currentSlide);
+};
+
+const previousSlide = function () {
+  if (currentSlide === 0) {
+    currentSlide = maxSlide - 1;
+  } else {
+    currentSlide--;
+  }
+  goToSlide(currentSlide);
+  activeDot(currentSlide);
+  updateCaption(currentSlide);
+};
+
+const init = function () {
+  goToSlide(0);
+  createDots();
+  activeDot(0);
+  updateCaption(0);
+};
+init();
+
+buttonLeft.addEventListener(`click`, previousSlide);
+buttonRight.addEventListener(`click`, nextSlide);
+dotContainer.addEventListener(`click`, function (event) {
+  if (event.target.classList.contains(`dots--dot`)) {
+    currentSlide = Number(event.target.dataset.slide);
+    goToSlide(currentSlide);
+    activeDot(currentSlide);
+    updateCaption(currentSlide);
+  }
+});
