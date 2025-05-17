@@ -207,31 +207,31 @@ function renderToolsGrid() {
 const slideData = [
   {
     caption: "At the beach 🏖️",
-    hashtags: "#travel #newyork #photography",
+    hashtags: ["travel", "ok", "photography"],
     profilePic: "/assets/profile-image.jpg",
     username: "@dev.ejohn",
   },
   {
     caption: "Dora X Swiper 👉❤️👈 Joining the bandwagon",
-    hashtags: "#dog #puppy #cute",
+    hashtags: ["travel", "ssssd", "photography"],
     profilePic: "/assets/profile-image.jpg",
     username: "@dev.ejohn",
   },
   {
     caption: "Smiling whilst walking in London",
-    hashtags: "#london #travel #smile",
+    hashtags: ["travel", "newysdsdork", "photography"],
     profilePic: "/assets/profile-image.jpg",
     username: "@dev.ejohn",
   },
   {
     caption: "Focused while standing in a London park",
-    hashtags: "#nature #focus #london",
+    hashtags: ["travel", "newyork", "photography"],
     profilePic: "/assets/profile-image.jpg",
     username: "@dev.ejohn",
   },
   {
     caption: "Any look alike?",
-    hashtags: "#originalcharacter",
+    hashtags: ["travel", "newyork", "photography"],
     profilePic: "/assets/profile-image.jpg",
     username: "@dev.ejohn",
   },
@@ -269,14 +269,26 @@ const updateCaption = function (slideNumber) {
   const captionContainer = document.querySelector(".art__captions");
   const data = slideData[slideNumber];
 
+  const hashtagsString = data.hashtags.map((tag) => `#${tag}`).join(" ");
+
   captionContainer.innerHTML = `
           <p class="art__caption-main">
             <img class="art__caption-pic" src="${data.profilePic}" alt="Profile picture">
             <span class="art__caption-username">${data.username}</span>
              ${data.caption}
           </p>
-          <p class="art__caption-hashtags">${data.hashtags}</p>
+          <p class="art__caption-hashtags">${hashtagsString}</p>
   `;
+
+  const hashtagsElement = captionContainer.querySelector(
+    ".art__caption-hashtags"
+  );
+  if (hashtagsElement) {
+    hashtagsElement.classList.add("scale-up");
+    setTimeout(() => {
+      hashtagsElement.classList.remove("scale-up");
+    }, 300);
+  }
 };
 
 const goToSlide = function (slideNumber) {
